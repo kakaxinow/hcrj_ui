@@ -12215,6 +12215,10 @@ var _default = {
   //props:['icon','iconPosition']
   props: {
     icon: {},
+    loading: {
+      type: Boolean,
+      default: false
+    },
     //props第二种写法
     iconPosition: {
       type: String,
@@ -12245,14 +12249,16 @@ exports.default = _default;
       class: ((_obj = {}), (_obj["icon-" + _vm.iconPosition] = true), _obj)
     },
     [
-      _vm.icon
+      _vm.icon && !_vm.loading
         ? _c("g-icon", { staticClass: "icon", attrs: { name: _vm.icon } })
         : _vm._e(),
       _vm._v(" "),
-      _c("g-icon", {
-        staticClass: "loading",
-        attrs: { name: "#icon-loading" }
-      }),
+      _vm.loading
+        ? _c("g-icon", {
+            staticClass: "loading",
+            attrs: { name: "#icon-loading" }
+          })
+        : _vm._e(),
       _vm._v(" "),
       _c("div", { staticClass: "content" }, [_vm._t("default")], 2)
     ],
@@ -12403,7 +12409,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56796" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58434" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
