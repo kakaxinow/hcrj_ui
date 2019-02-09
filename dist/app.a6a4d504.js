@@ -12381,7 +12381,37 @@ exports.default = void 0;
 //
 //
 //
-var _default = {};
+var _default = {
+  mounted: function mounted() {
+    console.log(this.$el.children);
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+      for (var _iterator = this.$el.children[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var node = _step.value;
+        var nodename = node.nodeName.toLowerCase(); //console.log(nodename);
+        // if(nodename!=='button'){
+        //     console.warn("buttonGroup组件下必须全是button");
+        // }
+      }
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion && _iterator.return != null) {
+          _iterator.return();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
+      }
+    }
+  }
+};
 exports.default = _default;
         var $bcdf9e = exports.default || module.exports;
       
@@ -12482,7 +12512,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63695" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51127" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
