@@ -1,11 +1,15 @@
 .g-button {
-  padding: 0 1em;
+  padding: 0 0.5em;
   font-size: var(--font-size);
   height: var(--button-height);
   background-color: var(--button-bg);
   color: var(--color);
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
 }
 .g-button:hover {
   border-color: var(--border-color-hover);
@@ -15,4 +19,20 @@
 }
 .g-button:focus {
   outline: none;
+}
+.g-button > .content {
+  order: 2;
+}
+.g-button > .icon {
+  order: 1;
+  margin-right: 0.1em;
+  margin-left: 0;
+}
+.g-button.icon-right > .content {
+  order: 1;
+}
+.g-button.icon-right > .icon {
+  order: 2;
+  margin-right: 0;
+  margin-left: 0.1em;
 }
