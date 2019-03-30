@@ -17,14 +17,31 @@
     --border-color:#999;
     --border-color-hover:#666;
 }</style>
-<style>
-   
-
-</style>
+<style>.row{display: flex}
+   .col{}
+   .col[data-span="2"]{width: 8.3333333%;}
+   .col[data-span="22"]{width: 91.666667%;}</style>
 <!--npm下载东西的时候,如果是面向开发者的包就-D,如果不是，就不需要-D -->
 
 <body>
 <div id="app">
+    <g-row>
+        <g-col></g-col>
+        <g-col></g-col>
+    </g-row>
+    <g-row>
+        <g-col></g-col>
+        <g-col></g-col>
+        <g-col></g-col>
+    </g-row>
+    <g-row>
+        <g-col span="2"></g-col>
+        <g-col span="22"></g-col>
+    </g-row>
+    <g-row>
+        <g-col span="2"></g-col>
+        <g-col span="22" offset="2"></g-col>
+    </g-row>
     <g-button class="g-button" icon="#icon-larrow" :loading="loading1" @click="loading1=!loading1">按钮</g-button>
     <g-button class="g-button" icon="#icon-jiantou" :loading="loading1">按钮</g-button>
     <g-button class="g-button" icon="#icon-up">按钮</g-button>
