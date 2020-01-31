@@ -7,74 +7,77 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<style>
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box
-    }
+<!--<style>-->
+<!--    * {-->
+<!--        padding: 0;-->
+<!--        margin: 0;-->
+<!--        box-sizing: border-box-->
+<!--    }-->
 
-    :root {
-        --button-height: 32px;
-        --font-size: 14px;
-        --button-bg: white;
-        --border-radius: 4px;
-        --color: #999;
-        --border-color: #999;
-        --border-color-hover: #666;
-    }
-</style>
-<style>
-    .row {
-        display: flex
-    }
+<!--    :root {-->
+<!--        &#45;&#45;button-height: 32px;-->
+<!--        &#45;&#45;font-size: 14px;-->
+<!--        &#45;&#45;button-bg: white;-->
+<!--        &#45;&#45;border-radius: 4px;-->
+<!--        &#45;&#45;color: #999;-->
+<!--        &#45;&#45;border-color: #999;-->
+<!--        &#45;&#45;border-color-hover: #666;-->
+<!--    }-->
+<!--</style>-->
+<!--<style>-->
+<!--    .row {-->
+<!--        display: flex-->
+<!--    }-->
 
-    .col {
-    }
+<!--    .col {-->
+<!--    }-->
 
-    .col[data-span="2"] {
-        width: 8.3333333%;
-    }
+<!--    .col[data-span="2"] {-->
+<!--        width: 8.3333333%;-->
+<!--    }-->
 
-    .col[data-span="22"] {
-        width: 91.666667%;
-    }
-</style>
+<!--    .col[data-span="22"] {-->
+<!--        width: 91.666667%;-->
+<!--    }-->
+<!--</style>-->
 <!--npm下载东西的时候,如果是面向开发者的包就-D,如果不是，就不需要-D -->
 
 <body>
+<!--<div id="app">-->
+<!--    <g-row>-->
+<!--        <g-col></g-col>-->
+<!--        <g-col></g-col>-->
+<!--    </g-row>-->
+<!--    <g-row>-->
+<!--        <g-col></g-col>-->
+<!--        <g-col></g-col>-->
+<!--        <g-col></g-col>-->
+<!--    </g-row>-->
+<!--    <g-row>-->
+<!--        <g-col span="2"></g-col>-->
+<!--        <g-col span="22"></g-col>-->
+<!--    </g-row>-->
+<!--    <g-row>-->
+<!--        <g-col span="2"></g-col>-->
+<!--        <g-col span="22" offset="2"></g-col>-->
+<!--    </g-row>-->
+<!--    <g-button class="g-button" icon="#icon-larrow" :loading="loading1" @click="loading1=!loading1">按钮</g-button>-->
+<!--    <g-button class="g-button" icon="#icon-jiantou" :loading="loading1">按钮</g-button>-->
+<!--    <g-button class="g-button" icon="#icon-up">按钮</g-button>-->
+<!--    <g-button class="g-button" icon-position="right" icon="#icon-larrow" :loading="true">按钮</g-button>-->
+<!--    <g-button-group>-->
+<!--        <g-button class="g-button" icon="#icon-up">按钮组1</g-button>-->
+<!--        <g-button class="g-button" icon-position="right" icon="#icon-larrow" :loading="true">按钮组2</g-button>-->
+<!--    </g-button-group>-->
+<!--    <g-input value="张三" :disabled="true"></g-input>-->
+<!--    <g-input value="张三" :disabled="false"></g-input>-->
+<!--    <g-input value="张三" :readonly="true"></g-input>-->
+<!--    <g-input value="张三" error="姓名不能少于2个字符"></g-input>-->
+<!--    <g-input value="张三" v-model="message"></g-input>-->
+<!--    <span>{{message}}</span>-->
+<!--</div>-->
 <div id="app">
-    <g-row>
-        <g-col></g-col>
-        <g-col></g-col>
-    </g-row>
-    <g-row>
-        <g-col></g-col>
-        <g-col></g-col>
-        <g-col></g-col>
-    </g-row>
-    <g-row>
-        <g-col span="2"></g-col>
-        <g-col span="22"></g-col>
-    </g-row>
-    <g-row>
-        <g-col span="2"></g-col>
-        <g-col span="22" offset="2"></g-col>
-    </g-row>
-    <g-button class="g-button" icon="#icon-larrow" :loading="loading1" @click="loading1=!loading1">按钮</g-button>
-    <g-button class="g-button" icon="#icon-jiantou" :loading="loading1">按钮</g-button>
-    <g-button class="g-button" icon="#icon-up">按钮</g-button>
-    <g-button class="g-button" icon-position="right" icon="#icon-larrow" :loading="true">按钮</g-button>
-    <g-button-group>
-        <g-button class="g-button" icon="#icon-up">按钮组1</g-button>
-        <g-button class="g-button" icon-position="right" icon="#icon-larrow" :loading="true">按钮组2</g-button>
-    </g-button-group>
-    <g-input value="张三" :disabled="true"></g-input>
-    <g-input value="张三" :disabled="false"></g-input>
-    <g-input value="张三" :readonly="true"></g-input>
-    <g-input value="张三" error="姓名不能少于2个字符"></g-input>
-    <g-input value="张三" v-model="message"></g-input>
-    <span>{{message}}</span>
+    <button @click="showToast">点我</button>
 </div>
 <script src="./src/app.js"></script>
 <script src="//at.alicdn.com/t/font_1040001_p1vadx53b.js"></script>

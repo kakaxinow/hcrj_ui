@@ -21,7 +21,7 @@ export default {
            type:String,
            default:'left',
            validator(value){
-               return !(value!=='left' && value!=='right') 
+               return !(value!=='left' && value!=='right')
            }
        }
    }
@@ -57,5 +57,5 @@ export default {
             animation : spin 2s infinite linear;
         }
     }
-    
+
 </style>
