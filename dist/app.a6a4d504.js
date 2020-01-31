@@ -12953,8 +12953,52 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
 var _default = {
-  name: "toast"
+  name: "toast",
+  props: {
+    autoClose: {
+      type: Boolean,
+      default: true
+    },
+    autoCloseDelay: {
+      type: Number,
+      default: 500
+    },
+    closeButton: {
+      type: Object,
+      default: function _default() {
+        return {
+          text: "关闭",
+          callback: function callback(toast) {
+            toast.close();
+          }
+        };
+      }
+    }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    if (this.autoClose) {
+      setTimeout(function () {
+        _this.close();
+      }, this.autoCloseDelay * 1000);
+    }
+  },
+  methods: {
+    close: function close() {
+      this.$el.remove();
+      this.$destroy();
+    },
+    onClickClose: function onClickClose() {
+      this.close();
+      this.closeButton.callback();
+    }
+  }
 };
 exports.default = _default;
         var $69f25d = exports.default || module.exports;
@@ -12969,7 +13013,24 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "toast" }, [_vm._t("default")], 2)
+  return _c(
+    "div",
+    { staticClass: "toast" },
+    [
+      _vm._t("default"),
+      _vm._v(" "),
+      _c("div", { staticClass: "line" }),
+      _vm._v(" "),
+      _vm.closeButton
+        ? _c(
+            "span",
+            { staticClass: "closetext", on: { click: _vm.onClickClose } },
+            [_vm._v("\n        " + _vm._s(_vm.closeButton.text) + "\n    ")]
+          )
+        : _vm._e()
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -13021,7 +13082,16 @@ var _default = {
     Vue.prototype.$toast = function (message) {
       //console.log("I am toast plugin");
       var Constructor = Vue.extend(_toast.default);
-      var toast = new Constructor();
+      var toast = new Constructor({
+        propsData: {
+          closeButton: {
+            text: "知道了",
+            callback: function callback() {
+              console.log("用户说他知道了");
+            }
+          }
+        }
+      });
       toast.$slots.default = [message];
       toast.$mount();
       document.body.appendChild(toast.$el);
@@ -13108,7 +13178,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62307" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54600" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

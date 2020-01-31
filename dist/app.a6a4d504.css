@@ -250,3 +250,11 @@
   display: flex;
   align-items: center;
 }
+.closetext[data-v-69f25d] {
+  margin-left: 16px;
+}
+.line[data-v-69f25d] {
+  height: 100%;
+  border: 1px solid #666;
+  margin-left: 6px;
+}
