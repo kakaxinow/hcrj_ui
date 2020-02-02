@@ -1,7 +1,7 @@
 <template>
-    <div class="toast">
+    <div class="toast" ref="wrap" :class="toastClasses">
         <slot></slot>
-        <div class="line"></div>
+        <div class="line" ref="line"></div>
         <span v-if="closeButton" class="closetext" @click="onClickClose">
             {{closeButton.text}}
         </span>
@@ -18,17 +18,29 @@
             },
             autoCloseDelay:{
                 type:Number,
-                default: 500
+                default: 3
             },
             closeButton:{
                 type:Object,
                 default(){
                     return {
                         text:"关闭",
-                        callback:(toast)=>{
-                            toast.close();
-                        }
+                        callback:undefined
                     }
+                }
+            },
+            position:{
+                type:String,
+                default:'top',
+                validator(value){
+                    return ['top','bottom','middle'].indexOf(value)>=0
+                }
+            }
+        },
+        computed:{
+            toastClasses(){
+                return {
+                    [`position-${this.position}`]:true
                 }
             }
         },
@@ -38,6 +50,9 @@
                     this.close();
                 },this.autoCloseDelay*1000);
             }
+            this.$nextTick(()=>{
+                this.$refs.line.style.height = `${this.$refs.wrap.getBoundingClientRect().height}px`;
+            })
         },
         methods:{
             close(){
@@ -46,7 +61,9 @@
             },
             onClickClose(){
                 this.close();
-                this.closeButton.callback();
+                if(this.closeButton && typeof this.closeButton.callback==='function'){
+                    this.closeButton.callback();
+                }
             }
         }
     }
@@ -60,26 +77,42 @@
 .toast{
     font-size: $font-size;
     line-height:1.8;
-    height: $height;
+    min-height: $height;
     background-color: $toast-bg;
     border-radius: 4px;
     color: white;
     padding: 0 16px;
     box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.5);
     position: fixed;
-    top: 0;
     left: 50%;
-    transform: translateX(-50%);
     display: flex;
     align-items: center;
-}
     .closetext{
         margin-left: 16px;
+        flex-shrink: 0;
     }
-.line{
-    height: 100%;
-    border: 1px solid #666;
-    margin-left: 6px;
+    .line{
+        height: 100%;
+        border: 1px solid #666;
+        margin-left: 6px;
+
+    }
+    &.positions-top{
+        top: 0;
+        transform: translateX(-50%);
+
+    }
+    &.positions-bottom{
+        bottom:0;
+        transform: translateX(-50%);
+
+    }
+    &.positions-middle{
+        top: 50%;
+        transform: translate(-50%,-50%);
+
+    }
 
 }
+
 </style>

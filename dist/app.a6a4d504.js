@@ -12947,6 +12947,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -12966,18 +12969,28 @@ var _default = {
     },
     autoCloseDelay: {
       type: Number,
-      default: 500
+      default: 3
     },
     closeButton: {
       type: Object,
       default: function _default() {
         return {
           text: "关闭",
-          callback: function callback(toast) {
-            toast.close();
-          }
+          callback: undefined
         };
       }
+    },
+    position: {
+      type: String,
+      default: 'top',
+      validator: function validator(value) {
+        return ['top', 'bottom', 'middle'].indexOf(value) >= 0;
+      }
+    }
+  },
+  computed: {
+    toastClasses: function toastClasses() {
+      return _defineProperty({}, "position-".concat(this.position), true);
     }
   },
   mounted: function mounted() {
@@ -12988,6 +13001,10 @@ var _default = {
         _this.close();
       }, this.autoCloseDelay * 1000);
     }
+
+    this.$nextTick(function () {
+      _this.$refs.line.style.height = "".concat(_this.$refs.wrap.getBoundingClientRect().height, "px");
+    });
   },
   methods: {
     close: function close() {
@@ -12996,7 +13013,10 @@ var _default = {
     },
     onClickClose: function onClickClose() {
       this.close();
-      this.closeButton.callback();
+
+      if (this.closeButton && typeof this.closeButton.callback === 'function') {
+        this.closeButton.callback();
+      }
     }
   }
 };
@@ -13015,11 +13035,11 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "toast" },
+    { ref: "wrap", staticClass: "toast", class: _vm.toastClasses },
     [
       _vm._t("default"),
       _vm._v(" "),
-      _c("div", { staticClass: "line" }),
+      _c("div", { ref: "line", staticClass: "line" }),
       _vm._v(" "),
       _vm.closeButton
         ? _c(
@@ -13079,17 +13099,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var _default = {
   install: function install(Vue, options) {
-    Vue.prototype.$toast = function (message) {
+    Vue.prototype.$toast = function (message, newsoptions) {
       //console.log("I am toast plugin");
       var Constructor = Vue.extend(_toast.default);
+      console.log(newsoptions);
       var toast = new Constructor({
         propsData: {
-          closeButton: {
-            text: "知道了",
-            callback: function callback() {
-              console.log("用户说他知道了");
-            }
-          }
+          closeButton: newsoptions.closeButton
         }
       });
       toast.$slots.default = [message];
@@ -13147,7 +13163,17 @@ new _vue.default({
   },
   methods: {
     showToast: function showToast() {
-      this.$toast("我是toast组件");
+      this.$toast("消息发送成功", {
+        position: "middle",
+        closeButton: {
+          text: "知道了",
+          callback: function callback() {
+            console.log("用户说他知道了");
+          }
+        },
+        autoClose: false,
+        autoCloseDelay: 1
+      });
     }
   }
 });
@@ -13178,7 +13204,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54600" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57775" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

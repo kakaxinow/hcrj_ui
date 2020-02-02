@@ -237,24 +237,35 @@
 }.toast[data-v-69f25d] {
   font-size: 14px;
   line-height: 1.8;
-  height: 40px;
+  min-height: 40px;
   background-color: rgba(0, 0, 0, 0.75);
   border-radius: 4px;
   color: white;
   padding: 0 16px;
   box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.5);
   position: fixed;
-  top: 0;
   left: 50%;
-  transform: translateX(-50%);
   display: flex;
   align-items: center;
 }
-.closetext[data-v-69f25d] {
+.toast .closetext[data-v-69f25d] {
   margin-left: 16px;
+  flex-shrink: 0;
 }
-.line[data-v-69f25d] {
+.toast .line[data-v-69f25d] {
   height: 100%;
   border: 1px solid #666;
   margin-left: 6px;
+}
+.toast.positions-top[data-v-69f25d] {
+  top: 0;
+  transform: translateX(-50%);
+}
+.toast.positions-bottom[data-v-69f25d] {
+  bottom: 0;
+  transform: translateX(-50%);
+}
+.toast.positions-middle[data-v-69f25d] {
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
