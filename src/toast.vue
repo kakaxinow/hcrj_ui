@@ -31,7 +31,7 @@
             },
             position:{
                 type:String,
-                default:'top',
+                default:'middle',
                 validator(value){
                     return ['top','bottom','middle'].indexOf(value)>=0
                 }
@@ -45,18 +45,26 @@
             }
         },
         mounted() {
-            if(this.autoClose){
-                setTimeout(()=>{
-                    this.close();
-                },this.autoCloseDelay*1000);
-            }
-            this.$nextTick(()=>{
-                this.$refs.line.style.height = `${this.$refs.wrap.getBoundingClientRect().height}px`;
-            })
+            this.updateStyles();
+            this.execAutoClose();
+            console.log(this.position);
         },
         methods:{
+            execAutoClose(){
+                if(this.autoClose){
+                    setTimeout(()=>{
+                        this.close();
+                    },this.autoCloseDelay*1000);
+                }
+            },
+            updateStyles(){
+                this.$nextTick(()=>{
+                    this.$refs.line.style.height = `${this.$refs.wrap.getBoundingClientRect().height}px`;
+                })
+            },
             close(){
                 this.$el.remove();
+                this.$emit("beforeClose");
                 this.$destroy();
             },
             onClickClose(){
@@ -73,8 +81,12 @@
     $font-size:14px;
     $height:40px;
     $toast-bg:rgba(0,0,0,0.75);
-
+    @keyframes fadeIn {
+        0%{opacity: 0;transform: translateY(100%)}
+        100%{opacity: 1;transform: translateY(0%)}
+    }
 .toast{
+    animation: fadeIn 1s;
     font-size: $font-size;
     line-height:1.8;
     min-height: $height;
@@ -97,17 +109,17 @@
         margin-left: 6px;
 
     }
-    &.positions-top{
+    &.position-top{
         top: 0;
         transform: translateX(-50%);
 
     }
-    &.positions-bottom{
+    &.position-bottom{
         bottom:0;
         transform: translateX(-50%);
 
     }
-    &.positions-middle{
+    &.position-middle{
         top: 50%;
         transform: translate(-50%,-50%);
 

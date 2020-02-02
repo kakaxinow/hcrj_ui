@@ -27,7 +27,7 @@ new Vue({
     methods: {
         showToast() {
             this.$toast("消息发送成功", {
-                position:"middle",
+                position:"bottom",
                 closeButton: {
                     text: "知道了",
                     callback() {

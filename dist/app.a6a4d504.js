@@ -12982,7 +12982,7 @@ var _default = {
     },
     position: {
       type: String,
-      default: 'top',
+      default: 'middle',
       validator: function validator(value) {
         return ['top', 'bottom', 'middle'].indexOf(value) >= 0;
       }
@@ -12994,21 +12994,30 @@ var _default = {
     }
   },
   mounted: function mounted() {
-    var _this = this;
-
-    if (this.autoClose) {
-      setTimeout(function () {
-        _this.close();
-      }, this.autoCloseDelay * 1000);
-    }
-
-    this.$nextTick(function () {
-      _this.$refs.line.style.height = "".concat(_this.$refs.wrap.getBoundingClientRect().height, "px");
-    });
+    this.updateStyles();
+    this.execAutoClose();
+    console.log(this.position);
   },
   methods: {
+    execAutoClose: function execAutoClose() {
+      var _this = this;
+
+      if (this.autoClose) {
+        setTimeout(function () {
+          _this.close();
+        }, this.autoCloseDelay * 1000);
+      }
+    },
+    updateStyles: function updateStyles() {
+      var _this2 = this;
+
+      this.$nextTick(function () {
+        _this2.$refs.line.style.height = "".concat(_this2.$refs.wrap.getBoundingClientRect().height, "px");
+      });
+    },
     close: function close() {
       this.$el.remove();
+      this.$emit("beforeClose");
       this.$destroy();
     },
     onClickClose: function onClickClose() {
@@ -13097,24 +13106,41 @@ var _toast = _interopRequireDefault(require("./toast"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var currentToast;
 var _default = {
   install: function install(Vue, options) {
-    Vue.prototype.$toast = function (message, newsoptions) {
+    Vue.prototype.$toast = function (message, toastOptions) {
       //console.log("I am toast plugin");
-      var Constructor = Vue.extend(_toast.default);
-      console.log(newsoptions);
-      var toast = new Constructor({
-        propsData: {
-          closeButton: newsoptions.closeButton
+      if (currentToast) {
+        currentToast.close();
+      }
+
+      currentToast = createToast({
+        Vue: Vue,
+        message: message,
+        propsData: toastOptions,
+        onClose: function onClose() {
+          console.log("组件对象被移除");
         }
       });
-      toast.$slots.default = [message];
-      toast.$mount();
-      document.body.appendChild(toast.$el);
     };
   }
 };
 exports.default = _default;
+
+function createToast(_ref) {
+  var Vue = _ref.Vue,
+      message = _ref.message,
+      propsData = _ref.propsData,
+      onClose = _ref.onClose;
+  var Constructor = Vue.extend(_toast.default);
+  var toast = new Constructor(propsData);
+  toast.$slots.default = [message];
+  toast.$mount();
+  toast.$on("beforeClose", onClose);
+  document.body.appendChild(toast.$el);
+  return toast;
+}
 },{"./toast":"src/toast.vue"}],"src/app.js":[function(require,module,exports) {
 "use strict";
 
@@ -13164,7 +13190,7 @@ new _vue.default({
   methods: {
     showToast: function showToast() {
       this.$toast("消息发送成功", {
-        position: "middle",
+        position: "bottom",
         closeButton: {
           text: "知道了",
           callback: function callback() {
@@ -13204,7 +13230,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57775" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61901" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
