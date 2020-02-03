@@ -2,29 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ab0f8c1c-3db3-4157-a0f7-f81e604c31d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/tabs-body.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tabs-item.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/14/864b603bc8bbea54a460ce53f62d1e.json" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/14/864b603bc8bbea54a460ce53f62d1e.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/47/3e7a0b73c0f5394e19f2b2af3d8308.json" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/47/3e7a0b73c0f5394e19f2b2af3d8308.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/53/0bef6c427c2bdb388420c858440b0d.json" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/53/0bef6c427c2bdb388420c858440b0d.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/54/1ac0ed5304b25c79d460b38b8805f5.json" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/54/1ac0ed5304b25c79d460b38b8805f5.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/67/a4e048de489aff7444664041771996.json" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/67/a4e048de489aff7444664041771996.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/70/0f86a0107b7976698d6d5f84316ef9.json" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/70/0f86a0107b7976698d6d5f84316ef9.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/7f/fb9277778b58e2258fc6f8b571e6c9.json" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/7f/fb9277778b58e2258fc6f8b571e6c9.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/92/2e1c3c983e7da71cdcf18501f68e84.json" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/92/2e1c3c983e7da71cdcf18501f68e84.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/98/7b0c55fde63d69709b4bf6c398e69a.json" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/98/7b0c55fde63d69709b4bf6c398e69a.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/a2/5ca2f6e251b0470326b934098a12e9.json" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/a2/5ca2f6e251b0470326b934098a12e9.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/b5/6d6aec2daaf09f3230d96d4c4f1102.json" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/b5/6d6aec2daaf09f3230d96d4c4f1102.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/bb/4158477ab096b5e42118811f5eace7.json" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/bb/4158477ab096b5e42118811f5eace7.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/cb/e35f3897f6acb7126bf60b7edc5ad1.json" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/cb/e35f3897f6acb7126bf60b7edc5ad1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/d5/d83cb1357d39b99b92d9d9cecdb1d7.json" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/d5/d83cb1357d39b99b92d9d9cecdb1d7.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.cache/e0/db70656424ddefd9f996fc1eb6dc4a.json" beforeDir="false" afterPath="$PROJECT_DIR$/.cache/e0/db70656424ddefd9f996fc1eb6dc4a.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/meiui.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tabs-panel.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/app.a6a4d504.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/app.a6a4d504.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tabs-header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/tabs-header.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,11 +20,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/tabs.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
               <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tabs-panel.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="258">
+              <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="236">
+              <caret line="87" column="60" lean-forward="true" selection-start-line="87" selection-start-column="60" selection-end-line="87" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -81,13 +92,14 @@
         <option value="$PROJECT_DIR$/src/tabs.vue" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/button.vue" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/src/toast.vue" />
         <option value="$PROJECT_DIR$/src/plugin.js" />
-        <option value="$PROJECT_DIR$/src/app.js" />
         <option value="$PROJECT_DIR$/src/tabs-header.vue" />
         <option value="$PROJECT_DIR$/src/tabs-item.vue" />
         <option value="$PROJECT_DIR$/src/tabs-body.vue" />
+        <option value="$PROJECT_DIR$/src/tabs-panel.vue" />
+        <option value="$PROJECT_DIR$/src/app.js" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -110,6 +122,11 @@
             <path>
               <item name="hcrj_ui" type="b2602c69:ProjectViewProjectNode" />
               <item name="hcrj_ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="hcrj_ui" type="b2602c69:ProjectViewProjectNode" />
+              <item name="hcrj_ui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -162,12 +179,12 @@
       <workItem from="1580696700091" duration="32000" />
       <workItem from="1580697290535" duration="53000" />
       <workItem from="1580697468850" duration="231000" />
-      <workItem from="1580697728437" duration="4000" />
+      <workItem from="1580697728437" duration="1112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32591000" />
+    <option name="totallyTimeSpent" value="33699000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="807" extended-state="6" />
@@ -245,16 +262,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/toast.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
@@ -266,13 +273,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="66" column="20" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -308,6 +308,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tabs-panel.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="87" column="60" lean-forward="true" selection-start-line="87" selection-start-column="60" selection-end-line="87" selection-end-column="60" />
         </state>
       </provider>
     </entry>

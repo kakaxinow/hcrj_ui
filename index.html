@@ -78,6 +78,16 @@
 <!--</div>-->
 <div id="app">
     <button @click="showToast">点我</button>
+    <g-tabs>
+        <g-tabs-header>
+            <g-tabs-item name="women">美女</g-tabs-item>
+            <g-tabs-item name="finance">财经</g-tabs-item>
+        </g-tabs-header>
+        <g-tabs-body>
+            <g-tabs-panel name="women">美女资讯</g-tabs-panel>
+            <g-tabs-panel name="finance">财经资讯</g-tabs-panel>
+        </g-tabs-body>
+    </g-tabs>
 </div>
 <script src="./src/app.js"></script>
 <script src="//at.alicdn.com/t/font_1040001_p1vadx53b.js"></script>
