@@ -130,8 +130,18 @@
 .toast.position-middle[data-v-69f25d] {
   top: 50%;
   transform: translate(-50%, -50%);
-}.tabs-header[data-v-bbaa12]{
+}.tabs-header[data-v-bbaa12] {
+  display: flex;
+  height: 40px;
+  justify-content: flex-start;
+  align-items: center;
+  /*border: 1px solid red;*/
+}
+.tabs-header > .actions-wrapper[data-v-bbaa12] {
+  margin-left: auto;
 }.tabs-body[data-v-8a3d3e]{
-}.tabs-item[data-v-0aabf3]{
+}.tabs-item[data-v-0aabf3] {
+    flex-shrink: 0;
+    padding: 0 2em;
 }.tabs-panel[data-v-ebf511]{
 }

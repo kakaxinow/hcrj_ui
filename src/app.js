@@ -34,7 +34,8 @@ new Vue({
     },
     data: {
         loading1: false,
-        message: "zhang666"
+        message: "zhang666",
+        selectedTab:'sports'
     },
     methods: {
         showToast() {

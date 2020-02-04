@@ -12,7 +12,7 @@
         props:{
             selected:{
                 type:String,
-                default:'sports'
+                required:true
             },
             direction:{
                 type:String,
@@ -33,6 +33,10 @@
             }
         },
         created() {
+
+        },
+        mounted() {
+            this.eventBus.$emit('update:selected',this.selected);
         }
     }
 </script>

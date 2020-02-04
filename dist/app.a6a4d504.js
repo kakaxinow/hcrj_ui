@@ -13086,7 +13086,7 @@ var _default = {
   props: {
     selected: {
       type: String,
-      default: 'sports'
+      required: true
     },
     direction: {
       type: String,
@@ -13107,7 +13107,10 @@ var _default = {
       eventBus: this.eventBus
     };
   },
-  created: function created() {}
+  created: function created() {},
+  mounted: function mounted() {
+    this.eventBus.$emit('update:selected', this.selected);
+  }
 };
 exports.default = _default;
         var $5c2f9d = exports.default || module.exports;
@@ -13171,6 +13174,8 @@ exports.default = void 0;
 //
 //
 //
+//
+//
 var _default = {
   name: "tabs-header",
   inject: ['eventBus'],
@@ -13193,7 +13198,11 @@ exports.default = _default;
   return _c(
     "div",
     { staticClass: "tabs-header" },
-    [_vm._t("default"), _vm._v(" "), _vm._t("actions")],
+    [
+      _vm._t("default"),
+      _vm._v(" "),
+      _c("div", { staticClass: "actions-wrapper" }, [_vm._t("actions")], 2)
+    ],
     2
   )
 }
@@ -13518,7 +13527,8 @@ new _vue.default({
   created: function created() {},
   data: {
     loading1: false,
-    message: "zhang666"
+    message: "zhang666",
+    selectedTab: 'sports'
   },
   methods: {
     showToast: function showToast() {
@@ -13563,7 +13573,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57370" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65178" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
