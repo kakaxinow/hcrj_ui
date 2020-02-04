@@ -4,7 +4,7 @@ import Icon from './icon'
 import ButtonGroup from './button-group'
 import Input from './input'
 import Row from './row'
-import Col from './col'
+// import Col from './col'
 import Toast from './toast';
 import plugin from './plugin';
 import Tabs from './tabs';
@@ -19,7 +19,7 @@ Vue.component('g-icon', Icon);
 Vue.component('g-button-group', ButtonGroup);
 Vue.component('g-input', Input);
 Vue.component('g-row', Row);
-Vue.component('g-col', Col);
+// Vue.component('g-col', Col);
 Vue.component('g-toast', Toast);
 Vue.component('g-tabs',Tabs);
 Vue.component('g-tabs-header',TabsHeader);

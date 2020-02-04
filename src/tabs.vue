@@ -1,20 +1,39 @@
 <template>
-    <g-tabs selected="tab1">
-        <g-tabs-nav>
-            <g-tabs-item name="tab1"></g-tabs-item>
-            <g-tabs-item name="tab2"></g-tabs-item>
-        </g-tabs-nav>
-        <g-tabs-content>
-            <g-tabs-pane name="tab2"></g-tabs-pane>
-            <g-tabs-pane name="tab1"></g-tabs-pane>
-        </g-tabs-content>
-    </g-tabs>
+    <div class="tabs">
+        <slot></slot>
+    </div>
 
 </template>
 
 <script>
+    import Vue from 'vue'
     export default {
-        name: "tabs"
+        name: "tabs",
+        props:{
+            selected:{
+                type:String,
+                default:'sports'
+            },
+            direction:{
+                type:String,
+                default:'horizontal',//横向排列
+                validator(value){
+                    return ['horizontal','vertical'].indexOf(value)>=0
+                }
+            }
+        },
+        data(){
+            return {
+                eventBus:new Vue()
+            }
+        },
+        provide(){
+            return {
+                eventBus:this.eventBus
+            }
+        },
+        created() {
+        }
     }
 </script>
 

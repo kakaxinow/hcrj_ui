@@ -77,15 +77,23 @@
 <!--    <span>{{message}}</span>-->
 <!--</div>-->
 <div id="app">
-    <button @click="showToast">点我</button>
+<!--    <button @click="showToast">点我</button>-->
+<!--    :selected.sync="selectedTab"-->
     <g-tabs>
         <g-tabs-header>
+            <template slot="actions">
+                <button>设置</button>
+            </template>
             <g-tabs-item name="women">美女</g-tabs-item>
             <g-tabs-item name="finance">财经</g-tabs-item>
+            <g-tabs-item name="sports" disabled>体育</g-tabs-item>
+
         </g-tabs-header>
         <g-tabs-body>
             <g-tabs-panel name="women">美女资讯</g-tabs-panel>
             <g-tabs-panel name="finance">财经资讯</g-tabs-panel>
+            <g-tabs-panel name="sports">体育资讯</g-tabs-panel>
+
         </g-tabs-body>
     </g-tabs>
 </div>
