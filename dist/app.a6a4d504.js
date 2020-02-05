@@ -13086,7 +13086,7 @@ var _default = {
   props: {
     selected: {
       type: String,
-      required: true
+      required: false
     },
     direction: {
       type: String,
@@ -13331,10 +13331,23 @@ var _default = {
   },
   inject: ['eventBus'],
   created: function created() {
+    var _this = this;
+
     //console.log('爷爷给孙子到eventbBus');
     this.eventBus.$on("update:selected", function (name) {
-      console.log(name);
+      if (name === _this.name) {
+        _this.active = true;
+      } else {
+        _this.active = false;
+      }
     });
+  },
+  computed: {
+    classes: function classes() {
+      return {
+        active: this.active
+      };
+    }
   },
   methods: {
     xxx: function xxx() {
@@ -13357,7 +13370,7 @@ exports.default = _default;
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "tabs-item", on: { click: _vm.xxx } },
+    { staticClass: "tabs-item", class: _vm.classes, on: { click: _vm.xxx } },
     [_vm._t("default")],
     2
   )
@@ -13411,9 +13424,35 @@ exports.default = void 0;
 var _default = {
   name: "tabs-panel",
   inject: ['eventBus'],
+  data: function data() {
+    return {
+      active: false
+    };
+  },
+  props: {
+    name: {
+      type: String | Number,
+      required: true
+    }
+  },
+  computed: {
+    classes: function classes() {
+      return {
+        active: this.active
+      };
+    }
+  },
   created: function created() {
+    var _this = this;
+
     this.eventBus.$on("update:selected", function (name) {
-      console.log(name);
+      if (name === _this.name) {
+        console.log("panel".concat(_this.name, "\u88AB\u9009\u4E2D"));
+        _this.active = true;
+      } else {
+        console.log("panel".concat(_this.name, "\u672A\u88AB\u9009\u4E2D"));
+        _this.active = false;
+      }
     });
   }
 };
@@ -13430,7 +13469,14 @@ exports.default = _default;
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "tabs-panel" }, [_vm._t("default")], 2)
+  return _vm.active
+    ? _c(
+        "div",
+        { staticClass: "tabs-panel", class: _vm.classes },
+        [_vm._t("default")],
+        2
+      )
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -13573,7 +13619,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65178" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61550" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

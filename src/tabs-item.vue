@@ -1,5 +1,5 @@
 <template>
-    <div class="tabs-item" @click="xxx">
+    <div class="tabs-item" @click="xxx" :class="classes">
         <slot></slot>
     </div>
 </template>
@@ -20,9 +20,20 @@
         inject: ['eventBus'],
         created() {
             //console.log('爷爷给孙子到eventbBus');
-            this.eventBus.$on("update:selected", name => {
-                console.log(name);
+            this.eventBus.$on("update:selected",name=>{
+                if(name===this.name){
+                    this.active=true;
+                }else{
+                    this.active=false;
+                }
             })
+        },
+        computed:{
+            classes(){
+                return {
+                    active:this.active
+                }
+            }
         },
         methods: {
             xxx() {
@@ -32,9 +43,12 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     .tabs-item {
         flex-shrink: 0;
         padding: 0 2em;
+        &.active{
+            background-color: red;
+        }
     }
 </style>

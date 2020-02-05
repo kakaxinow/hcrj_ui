@@ -141,7 +141,11 @@
   margin-left: auto;
 }.tabs-body[data-v-8a3d3e]{
 }.tabs-item[data-v-0aabf3] {
-    flex-shrink: 0;
-    padding: 0 2em;
-}.tabs-panel[data-v-ebf511]{
+  flex-shrink: 0;
+  padding: 0 2em;
+}
+.tabs-item.active[data-v-0aabf3] {
+  background-color: red;
+}.tabs-panel.active[data-v-ebf511] {
+  background-color: red;
 }
