@@ -7,6 +7,11 @@
 <script>
     export default {
         name: "tabs-item",
+        data() {
+            return {
+                active: false
+            }
+        },
         props: {
             disabled: {
                 type: Boolean,

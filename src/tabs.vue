@@ -12,7 +12,7 @@
         props:{
             selected:{
                 type:String,
-                default:'sports'
+                required:true
             },
             direction:{
                 type:String,
@@ -33,7 +33,8 @@
             }
         },
         created() {
-
+            //this.$emit("update:selected","这是this.emit出来的数据");
+            //this.eventBus.$emit("update:selected","这是this.eventBus出来的数据");
         },
         mounted() {
             this.eventBus.$emit('update:selected',this.selected);

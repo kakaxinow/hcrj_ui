@@ -35,9 +35,12 @@ new Vue({
     data: {
         loading1: false,
         message: "zhang666",
-        selectedTab:'sports'
+        selectedTab:'finance'
     },
     methods: {
+        yyy(data){
+            console.log(data);
+        },
         showToast() {
             this.$toast("消息发送成功", {
                 position:"bottom",

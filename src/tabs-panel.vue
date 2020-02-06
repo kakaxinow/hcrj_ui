@@ -29,10 +29,10 @@
         created() {
             this.eventBus.$on("update:selected", name => {
                 if (name === this.name) {
-                    console.log(`panel${this.name}被选中`);
+                    //console.log(`panel${this.name}被选中`);
                     this.active = true;
                 } else {
-                    console.log(`panel${this.name}未被选中`);
+                    //console.log(`panel${this.name}未被选中`);
                     this.active = false;
                 }
             });

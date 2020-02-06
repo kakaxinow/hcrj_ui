@@ -13086,7 +13086,7 @@ var _default = {
   props: {
     selected: {
       type: String,
-      default: 'sports'
+      required: true
     },
     direction: {
       type: String,
@@ -13107,7 +13107,9 @@ var _default = {
       eventBus: this.eventBus
     };
   },
-  created: function created() {},
+  created: function created() {//this.$emit("update:selected","这是this.emit出来的数据");
+    //this.eventBus.$emit("update:selected","这是this.eventBus出来的数据");
+  },
   mounted: function mounted() {
     this.eventBus.$emit('update:selected', this.selected);
   }
@@ -13319,6 +13321,11 @@ exports.default = void 0;
 //
 var _default = {
   name: "tabs-item",
+  data: function data() {
+    return {
+      active: false
+    };
+  },
   props: {
     disabled: {
       type: Boolean,
@@ -13447,10 +13454,10 @@ var _default = {
 
     this.eventBus.$on("update:selected", function (name) {
       if (name === _this.name) {
-        console.log("panel".concat(_this.name, "\u88AB\u9009\u4E2D"));
+        //console.log(`panel${this.name}被选中`);
         _this.active = true;
       } else {
-        console.log("panel".concat(_this.name, "\u672A\u88AB\u9009\u4E2D"));
+        //console.log(`panel${this.name}未被选中`);
         _this.active = false;
       }
     });
@@ -13574,9 +13581,12 @@ new _vue.default({
   data: {
     loading1: false,
     message: "zhang666",
-    selectedTab: 'sports'
+    selectedTab: 'finance'
   },
   methods: {
+    yyy: function yyy(data) {
+      console.log(data);
+    },
     showToast: function showToast() {
       this.$toast("消息发送成功", {
         position: "bottom",
@@ -13619,7 +13629,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55915" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61371" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
