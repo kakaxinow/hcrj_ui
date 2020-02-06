@@ -12,7 +12,7 @@
         props:{
             selected:{
                 type:String,
-                required:false
+                default:'sports'
             },
             direction:{
                 type:String,
