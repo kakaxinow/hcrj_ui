@@ -39,7 +39,7 @@ new Vue({
     },
     methods: {
         yyy(data){
-            console.log(data);
+            //console.log(data);
         },
         showToast() {
             this.$toast("消息发送成功", {
