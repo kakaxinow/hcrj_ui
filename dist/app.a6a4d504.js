@@ -13525,6 +13525,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+
+var _vue = _interopRequireDefault(require("vue"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 //
 //
 //
@@ -13532,7 +13537,29 @@ exports.default = void 0;
 //
 //
 var _default = {
-  name: "collapse"
+  name: "collapse",
+  props: {
+    single: {
+      type: Boolean,
+      default: false
+    },
+    selected: {
+      type: String
+    }
+  },
+  data: function data() {
+    return {
+      eventBus: new _vue.default()
+    };
+  },
+  provide: function provide() {
+    return {
+      eventBus: this.eventBus
+    };
+  },
+  mounted: function mounted() {
+    this.eventBus.$emit("update:selected", this.selected);
+  }
 };
 exports.default = _default;
         var $adef09 = exports.default || module.exports;
@@ -13582,7 +13609,7 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/collapse-item.vue":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.common.js","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js"}],"src/collapse-item.vue":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13606,12 +13633,44 @@ var _default = {
     title: {
       type: String,
       required: true
+    },
+    name: {
+      type: String,
+      required: true
     }
+  },
+  inject: ['eventBus'],
+  mounted: function mounted() {
+    var _this = this;
+
+    this.eventBus && this.eventBus.$on('update:selected', function (name) {
+      if (name != _this.name) {
+        _this.close();
+      } else {
+        _this.show();
+      }
+    });
   },
   data: function data() {
     return {
       open: false
     };
+  },
+  methods: {
+    toggle: function toggle() {
+      if (this.open) {
+        this.open = false;
+      } else {
+        //this.open = true;
+        this.eventBus.$emit("update:selected", this.name);
+      }
+    },
+    close: function close() {
+      this.open = false;
+    },
+    show: function show() {
+      this.open = true;
+    }
   }
 };
 exports.default = _default;
@@ -13628,18 +13687,9 @@ exports.default = _default;
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "collapseItem" }, [
-    _c(
-      "div",
-      {
-        staticClass: "title",
-        on: {
-          click: function($event) {
-            _vm.open = !_vm.open
-          }
-        }
-      },
-      [_vm._v("\n        " + _vm._s(_vm.title) + "\n    ")]
-    ),
+    _c("div", { staticClass: "title", on: { click: _vm.toggle } }, [
+      _vm._v("\n        " + _vm._s(_vm.title) + "\n    ")
+    ]),
     _vm._v(" "),
     _vm.open
       ? _c("div", { staticClass: "content" }, [_vm._t("default")], 2)
@@ -13797,7 +13847,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53856" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56422" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
