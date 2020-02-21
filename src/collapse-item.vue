@@ -26,7 +26,9 @@
         mounted() {
             this.eventBus && this.eventBus.$on('update:selected', name => {
                 if (name != this.name) {
-                    this.close();
+                    if(this.single){
+                        this.close();
+                    }
                 } else {
                     this.show();
                 }
@@ -78,7 +80,9 @@
         }
 
         > .content {
-            padding: 8px;
+            /*padding: 8px;*/
+            height: 60px;
+            line-height: 35px;
         }
 
     }

@@ -40,7 +40,7 @@ new Vue({
     data: {
         loading1: false,
         message: "zhang666",
-        selectedTab:'finance'
+        selectedTab:'2',
     },
     methods: {
         yyy(data){

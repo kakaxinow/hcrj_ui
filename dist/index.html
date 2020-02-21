@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 <link rel="stylesheet" href="/app.a6a4d504.css"></head>
-<style>*{
+<style>* {
         padding: 0;
         margin: 0;
         box-sizing: border-box;
@@ -82,32 +82,32 @@
 <!--    <span>{{message}}</span>-->
 <!--</div>-->
 <div id="app">
-<!--    <button @click="showToast">点我</button>-->
-<!--    :selected.sync="selectedTab"-->
-<!--    <g-tabs :selected.sync ="selectedTab" @update.selected="yyy">-->
-<!--        <g-tabs-header>-->
-<!--            <template slot="actions">-->
-<!--                <button>设置</button>-->
-<!--            </template>-->
-<!--            <g-tabs-item name="women">美女</g-tabs-item>-->
-<!--            <g-tabs-item name="finance">财经</g-tabs-item>-->
-<!--            <g-tabs-item name="sports" disabled>体育</g-tabs-item>-->
+    <!--    <button @click="showToast">点我</button>-->
+    <!--    :selected.sync="selectedTab"-->
+    <!--    <g-tabs :selected.sync ="selectedTab" @update.selected="yyy">-->
+    <!--        <g-tabs-header>-->
+    <!--            <template slot="actions">-->
+    <!--                <button>设置</button>-->
+    <!--            </template>-->
+    <!--            <g-tabs-item name="women">美女</g-tabs-item>-->
+    <!--            <g-tabs-item name="finance">财经</g-tabs-item>-->
+    <!--            <g-tabs-item name="sports" disabled>体育</g-tabs-item>-->
 
-<!--        </g-tabs-header>-->
-<!--        <g-tabs-body>-->
-<!--            <g-tabs-panel name="women">美女资讯</g-tabs-panel>-->
-<!--            <g-tabs-panel name="finance">财经资讯</g-tabs-panel>-->
-<!--            <g-tabs-panel name="sports">体育资讯</g-tabs-panel>-->
+    <!--        </g-tabs-header>-->
+    <!--        <g-tabs-body>-->
+    <!--            <g-tabs-panel name="women">美女资讯</g-tabs-panel>-->
+    <!--            <g-tabs-panel name="finance">财经资讯</g-tabs-panel>-->
+    <!--            <g-tabs-panel name="sports">体育资讯</g-tabs-panel>-->
 
-<!--        </g-tabs-body>-->
-<!--    </g-tabs>-->
+    <!--        </g-tabs-body>-->
+    <!--    </g-tabs>-->
 
-<g-collapse selected="2">
-    <g-collapse-item title="标题1" name="1">内容1</g-collapse-item>
-    <g-collapse-item title="标题2" name="2">内容2</g-collapse-item>
-    <g-collapse-item title="标题3" name="3">内容3</g-collapse-item>
-</g-collapse>
-
+    <g-collapse :selected.sync="selectedTab" :single="true">
+        <g-collapse-item title="标题1" name="1">内容1</g-collapse-item>
+        <g-collapse-item title="标题2" name="2">内容2</g-collapse-item>
+        <g-collapse-item title="标题3" name="3">内容3</g-collapse-item>
+    </g-collapse>
+    {{selectedTab}}
 </div>
 <script src="/app.a6a4d504.js"></script>
 <script src="//at.alicdn.com/t/font_1040001_p1vadx53b.js"></script>

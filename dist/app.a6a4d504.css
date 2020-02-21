@@ -165,5 +165,7 @@
   border-top-right-radius: 4px;
 }
 .collapseItem > .content[data-v-dfe223] {
-  padding: 8px;
+  /*padding: 8px;*/
+  height: 60px;
+  line-height: 35px;
 }

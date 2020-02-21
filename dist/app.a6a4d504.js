@@ -13558,7 +13558,15 @@ var _default = {
     };
   },
   mounted: function mounted() {
+    var _this = this;
+
     this.eventBus.$emit("update:selected", this.selected);
+    this.eventBus.$on("update:selected", function (name) {
+      _this.$emit("update:selected", name);
+    });
+    this.$children.forEach(function (vm) {
+      vm.single = _this.single;
+    });
   }
 };
 exports.default = _default;
@@ -13645,7 +13653,9 @@ var _default = {
 
     this.eventBus && this.eventBus.$on('update:selected', function (name) {
       if (name != _this.name) {
-        _this.close();
+        if (_this.single) {
+          _this.close();
+        }
       } else {
         _this.show();
       }
@@ -13800,7 +13810,7 @@ new _vue.default({
   data: {
     loading1: false,
     message: "zhang666",
-    selectedTab: 'finance'
+    selectedTab: '2'
   },
   methods: {
     yyy: function yyy(data) {//console.log(data);
@@ -13847,7 +13857,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56422" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61177" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
